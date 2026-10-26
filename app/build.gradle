@@ -1,0 +1,36 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.bazaar.demo'
+    compileSdk 36
+
+    defaultConfig {
+        applicationId "com.bazaar.demo"
+        minSdk 24
+        targetSdk 33
+        versionCode 3
+        versionName "1.0.3"
+    }
+
+    buildTypes {
+        debug {
+            debuggable true
+            applicationIdSuffix ""
+        }
+        release {
+            minifyEnabled false
+            signingConfig signingConfigs.debug
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    lint {
+        abortOnError false
+    }
+}

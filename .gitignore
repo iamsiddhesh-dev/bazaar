@@ -1,0 +1,32 @@
+# Android / Gradle
+.gradle/
+build/
+local.properties
+*.iml
+.idea/
+captures/
+.externalNativeBuild/
+.cxx/
+
+# Build output
+*.apk
+*.aab
+*.ap_
+*.dex
+output.json
+
+# Keystores — never commit
+*.jks
+*.keystore
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+*.log

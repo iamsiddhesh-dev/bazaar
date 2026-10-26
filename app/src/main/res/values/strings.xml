@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Bazaar</string>
+
+    <string name="login_title">Sign in</string>
+    <string name="login_header">Bazaar</string>
+    <string name="login_sub">Furniture, made by hand</string>
+    <string name="email_hint">Email</string>
+    <string name="password_hint">Password</string>
+    <string name="continue_label">Continue</string>
+    <string name="login_error">Enter email and password</string>
+
+    <string name="catalog_title">Catalog</string>
+    <string name="cart_empty">No items yet</string>
+    <string name="open_cart_default">Cart (0)</string>
+    <string name="open_cart">Cart (%1$d)</string>
+    <string name="express_checkout">Express checkout (beta)</string>
+
+    <string name="add_to_cart">Add to cart</string>
+    <string name="added_toast">Added to cart</string>
+
+    <string name="specs_header">Details</string>
+    <string name="spec_material">Material: solid mahogany, brass inlay</string>
+    <string name="spec_dimensions">Dimensions: 120 × 60 × 210 cm</string>
+    <string name="spec_delivery">Delivery: ships in 6 weeks, free assembly</string>
+
+    <string name="cart_title">Your cart</string>
+    <string name="cart_count">Items: %1$d</string>
+    <string name="apply_coupon">Apply coupon</string>
+    <string name="checkout">Checkout</string>
+    <string name="checkout_pending">Processing payment…</string>
+    <string name="checkout_failed">Checkout failed (HTTP %1$d)</string>
+
+    <string name="checkout_title">Checkout</string>
+    <string name="checkout_ok">Order placed</string>
+    <string name="done">Done</string>
+</resources>

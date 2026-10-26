@@ -1,0 +1,41 @@
+package: com.bazaar.demo
+version: "1.0.3"
+profile_name: bazaar
+
+# Login is not validated, but the form must be filled to navigate.
+credentials:
+  email: qa@bazaar.dev
+  password: test1234
+
+# The app talks to a local mock backend only.
+allowed_hosts:
+  - "10.0.2.2:8100"
+
+seed:
+  cart_items: 0
+
+limits:
+  steps: 25
+  settle_ms: 4000
+  settle_timeout_ms: 12000
+
+# Everything is enabled; this is the reference fixture.
+detectors:
+  enable:
+    - crash
+    - anr
+    - http_5xx
+    - http_4xx
+    - deadtap
+    - ui_broken
+  disable: []
+
+verify:
+  mode: pm_clear
+  attempts: 3
+  inter_attempt_delay_ms: 1500
+
+expect:
+  confirmed: 4
+  flaky: 1        # when B5 fires; 0 is valid if the crawl never triggers it
+  filtered: 0

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/product_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <View
+            android:id="@+id/iv_product_image"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:background="@color/divider" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/tv_product_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="2"
+                android:textColor="@color/text_primary"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <!-- B4 (seeded): stale negative margin pulls the price up over the
+                 second line of the title. Two sibling TextViews overlap. -->
+            <TextView
+                android:id="@+id/tv_product_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-16dp"
+                android:textColor="@color/brand"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_product_desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:textColor="@color/text_muted"
+                android:textSize="15sp"
+                android:lineSpacingExtra="4dp" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/divider" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:background="@color/surface">
+
+            <TextView
+                android:id="@+id/tv_specs_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/specs_header"
+                android:textColor="@color/text_primary"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_spec_material"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/spec_material"
+                android:textColor="@color/text_muted"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_spec_dimensions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/spec_dimensions"
+                android:textColor="@color/text_muted"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_spec_delivery"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/spec_delivery"
+                android:textColor="@color/text_muted"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <Button
+                android:id="@+id/btn_add_cart"
+                style="@style/PrimaryButton"
+                android:layout_marginTop="4dp"
+                android:text="@string/add_to_cart" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

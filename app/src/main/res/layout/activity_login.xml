@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/login_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center_vertical"
+    android:background="@color/bg">
+
+    <TextView
+        android:id="@+id/tv_login_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/login_header"
+        android:textColor="@color/brand"
+        android:textSize="34sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_login_sub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/login_sub"
+        android:textColor="@color/text_muted"
+        android:textSize="15sp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="12dp" />
+
+    <EditText
+        android:id="@+id/et_email"
+        style="@style/Field"
+        android:hint="@string/email_hint"
+        android:inputType="textEmailAddress"
+        android:autofillHints="email" />
+
+    <EditText
+        android:id="@+id/et_password"
+        style="@style/Field"
+        android:hint="@string/password_hint"
+        android:inputType="textPassword"
+        android:autofillHints="password" />
+
+    <TextView
+        android:id="@+id/tv_login_error"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/error"
+        android:textSize="14sp"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/btn_continue"
+        style="@style/PrimaryButton"
+        android:text="@string/continue_label" />
+
+</LinearLayout>
