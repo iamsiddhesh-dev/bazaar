@@ -96,6 +96,43 @@ state the benchmark expects.
 
 ---
 
+## Use it with Litmus
+
+This app is the fixture for **Litmus**, a QA agent that explores an Android app,
+detects crashes, network errors and broken UI, then replays every finding three
+times and reports only what survives. If you have no APK of your own, use this
+one.
+
+```powershell
+git clone https://github.com/iamsiddhesh-dev/litmus
+git clone https://github.com/iamsiddhesh-dev/bazaar   # keep both side by side
+cd litmus
+python -m venv .venv
+.venv\Scripts\pip install -e ".[dev,runner,proxy]"
+.venv\Scripts\mqa.exe bench --fixture bazaar --runs 3
+```
+
+Litmus reads this checkout for the APK and the mock API, scores itself against
+[`benchmark/expected_findings.json`](benchmark/expected_findings.json) and
+writes `benchmark/results/<timestamp>.json`.
+
+Expected on a 720×1280 API 33 emulator: **B1–B4 confirmed 3/3**, and **B5 seen
+but reported `flaky`** — the agent must not sell a 1-in-3 crash as a real bug.
+
+**APK without building:** every `v*` tag builds in CI and attaches the debug APK
+to the release:
+
+```
+https://github.com/iamsiddhesh-dev/bazaar/releases/latest/download/app-debug.apk
+```
+
+28 KB, API 24+, debug-signed — installs on an emulator with
+`adb install app-debug.apk`. Start the mock backend first
+(`python mock-api/main.py`, port 8100) or the network scenarios have nothing to
+talk to.
+
+---
+
 ## Design notes
 
 **Classic Views, not Compose.** Every interactive element carries an explicit
@@ -128,6 +165,7 @@ docs/screens/            screenshots at 720x1280
 ## Limits
 
 - Not published to Play Store; distributed as a debug APK.
+- The release APK is attached by CI on a `v*` tag, not committed to git.
 - English only, portrait only.
 - No real payment, no persistence, no accounts.
 - The `release` build type is wired to the debug signing config, so it installs
